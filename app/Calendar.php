@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Calendar extends Model
 {
-    protected $fillable = ['name', 'date', 'description'];
+    protected $fillable = ['name', 'date', 'description', 'tempat', 'waktu'];
 }

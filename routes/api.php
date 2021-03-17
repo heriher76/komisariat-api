@@ -47,6 +47,9 @@ Route::group(['middleware' => 'auth'], function () use ($router) {
   //Calendar
   Route::get('calendars', 'CalendarController@index');
   Route::get('calendars/{id}', 'CalendarController@show');
+  //Info Training
+  Route::get('info-training', 'TrainingController@index');
+  Route::get('info-training/{id}', 'TrainingController@show');
   //Ebook
   Route::get('ebooks', 'EbookController@index');
   Route::get('ebooks/{id}', 'EbookController@show');

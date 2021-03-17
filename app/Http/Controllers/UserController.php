@@ -119,7 +119,7 @@ class UserController extends Controller
 
             $user = User::where('id', $iam->id)->first();
 
-            ($request->file('photo') != null) ? $namaPhoto = Str::random(32).'.'.$request->file('photo')->getClientOriginalExtension() : $namaPhoto = null;
+            ($request->file('photo') != null) ? $namaPhoto = url('/photo-profile').'/'.Str::random(32).'.'.$request->file('photo')->getClientOriginalExtension() : $namaPhoto = null;
 
             if (isset($user->photo)) {
                 unlink(base_path().'/public/photo-profile/'.$user->photo);
