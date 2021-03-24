@@ -57,6 +57,9 @@ Route::group(['middleware' => 'auth'], function () use ($router) {
   Route::get('cakaba-profile', 'CakabaProfileController@index');
   //StructureOrganization
   Route::get('structure-organization', 'StructureOrganizationController@index');
+  //YT Channel
+  Route::get('yt-channels', 'YtChannelController@index');
+  Route::get('yt-channels/{id}', 'YtChannelController@show');
 });
 Route::post('register', 'AuthController@register'); // register kader
 Route::post('login', 'AuthController@login'); // login all

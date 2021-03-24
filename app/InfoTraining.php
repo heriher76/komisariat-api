@@ -8,5 +8,5 @@ class InfoTraining extends Model
 {
     protected $table = 'info_training';
 
-    protected $fillable = ['title', 'date_start', 'date_end', 'province', 'url'];
+    protected $fillable = ['title', 'date_start', 'date_end', 'province', 'url', 'thumbnail'];
 }
