@@ -41,9 +41,6 @@ Route::group(['middleware' => 'auth'], function () use ($router) {
   //DeleteConversation
   Route::delete('conversation/delete/personal/{id}', 'ChatsController@personalDeleteChat');
   Route::delete('conversation/delete/group/{id}', 'ChatsController@groupDeleteChat');
-  //Article
-  Route::get('articles', 'ArticleController@index');
-  Route::get('articles/{id}', 'ArticleController@show');
   //Calendar
   Route::get('calendars', 'CalendarController@index');
   Route::get('calendars/{id}', 'CalendarController@show');
@@ -61,6 +58,10 @@ Route::group(['middleware' => 'auth'], function () use ($router) {
   Route::get('yt-channels', 'YtChannelController@index');
   Route::get('yt-channels/{id}', 'YtChannelController@show');
 });
+//Berita
+Route::get('articles', 'ArticleController@index');
+Route::get('articles/{id}', 'ArticleController@show');
+
 Route::post('register', 'AuthController@register'); // register kader
 Route::post('login', 'AuthController@login'); // login all
 
