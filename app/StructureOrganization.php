@@ -8,5 +8,5 @@ class StructureOrganization extends Model
 {
     protected $table = 'structures';
 
-    protected $fillable = ['name', 'position'];
+    protected $fillable = ['name', 'position', 'thumbnail'];
 }
