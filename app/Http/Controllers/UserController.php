@@ -107,22 +107,16 @@ class UserController extends Controller
 
     public function editPhoto(Request $request)
     {
-        //validate incoming request
-        $this->validate($request, [
-            //
-        ]);
-
         try {
             $iam = Auth::user();
-
-            ($request->input('status')) ? $status = $request->input('status') : $status = null;
 
             $user = User::where('id', $iam->id)->first();
 
             ($request->file('photo') != null) ? $namaPhoto = url('/photo-profile').'/'.Str::random(32).'.'.$request->file('photo')->getClientOriginalExtension() : $namaPhoto = null;
 
-            if (isset($user->photo)) {
-                unlink(base_path().'/public/photo-profile/'.$user->photo);
+            if ($request->file('photo') != null && !empty($user->photo)) {
+                $exploded = explode('/', $user->photo);
+                unlink(base_path().'/public/photo-profile/'.end($exploded));
             }
 
             $user->update([
